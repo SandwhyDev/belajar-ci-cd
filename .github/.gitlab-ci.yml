@@ -1,0 +1,24 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    -  # perintah build yang sesuai dengan project Anda
+
+test_job:
+  stage: test
+  script:
+    - echo "Running tests..."
+    -  # perintah pengujian yang sesuai dengan project Anda
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying the application..."
+    -  # perintah deployment yang sesuai dengan project Anda
+  only:
+    - main

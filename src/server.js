@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import env from "dotenv";
+import user_controllers from "./controllers/user_controllers";
 env.config();
 
 const app = express();
@@ -14,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "/public")));
 
 //ROUTES
-//app.use('/api', routes)
+app.use("/api", user_controllers);
 
 //LISTENER
 app.listen(PORT, "0.0.0.0", () => {
