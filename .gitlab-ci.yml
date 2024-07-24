@@ -9,6 +9,7 @@ build-job: # This job runs in the build stage, which runs first.
     - echo "Compiling the code..."
     - echo "Compile complete."
     - mkdir ~/test # Command to create the directory
+    - ls -la ~
 
 unit-test-job: # This job runs in the test stage.
   stage: test # It only starts when the job in the build stage completes successfully.
