@@ -33,4 +33,21 @@ user_controllers.post("/user-create", async (req, res) => {
   }
 });
 
+user_controllers.post("/user-read", async (req, res) => {
+  try {
+    const create = await user_model.findMany();
+
+    res.status(201).json({
+      success: true,
+      message: "berhasil",
+      data: create,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+});
+
 export default user_controllers;
