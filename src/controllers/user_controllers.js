@@ -33,7 +33,7 @@ user_controllers.post("/user-create", async (req, res) => {
   }
 });
 
-user_controllers.post("/user-read", async (req, res) => {
+user_controllers.get("/user-read", async (req, res) => {
   try {
     const create = await user_model.findMany();
 
